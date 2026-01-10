@@ -14,6 +14,8 @@ import { ThreadView } from "../agent-inbox";
 import { useQueryState, parseAsBoolean } from "nuqs";
 import { GenericInterruptView } from "./generic-interrupt";
 import { useArtifact } from "../artifact";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Bot } from "lucide-react";
 
 function CustomComponent({
   message,
@@ -142,6 +144,11 @@ export function AssistantMessage({
 
   return (
     <div className="group mr-auto flex items-start gap-2">
+      <Avatar className="size-8 shrink-0 self-start">
+        <AvatarFallback className="bg-purple-100 text-purple-600">
+          <Bot className="size-4" />
+        </AvatarFallback>
+      </Avatar>
       <div className="flex flex-col gap-2">
         {isToolResult ? (
           <>
@@ -214,6 +221,11 @@ export function AssistantMessage({
 export function AssistantMessageLoading() {
   return (
     <div className="mr-auto flex items-start gap-2">
+      <Avatar className="size-8 shrink-0 self-start">
+        <AvatarFallback className="bg-purple-100 text-purple-600">
+          <Bot className="size-4" />
+        </AvatarFallback>
+      </Avatar>
       <div className="bg-muted flex h-8 items-center gap-1 rounded-2xl px-4 py-2">
         <div className="bg-foreground/50 h-1.5 w-1.5 animate-[pulse_1.5s_ease-in-out_infinite] rounded-full"></div>
         <div className="bg-foreground/50 h-1.5 w-1.5 animate-[pulse_1.5s_ease-in-out_0.5s_infinite] rounded-full"></div>

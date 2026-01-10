@@ -7,6 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { BranchSwitcher, CommandBar } from "./shared";
 import { MultimodalPreview } from "@/components/thread/MultimodalPreview";
 import { isBase64ContentBlock } from "@/lib/multimodal-utils";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { User } from "lucide-react";
 
 function EditableContent({
   value,
@@ -76,7 +78,7 @@ export function HumanMessage({
   return (
     <div
       className={cn(
-        "group ml-auto flex items-center gap-2",
+        "group ml-auto flex items-start gap-2",
         isEditing && "w-full max-w-xl",
       )}
     >
@@ -146,6 +148,11 @@ export function HumanMessage({
           />
         </div>
       </div>
+      <Avatar className="size-8 shrink-0 self-start">
+        <AvatarFallback className="bg-blue-100 text-blue-600">
+          <User className="size-4" />
+        </AvatarFallback>
+      </Avatar>
     </div>
   );
 }
