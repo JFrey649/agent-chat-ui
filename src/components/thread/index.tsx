@@ -12,7 +12,7 @@ import {
   DO_NOT_RENDER_ID_PREFIX,
   ensureToolCallsHaveResponses,
 } from "@/lib/ensure-tool-responses";
-import { FaviconIcon } from "../icons/favicon";
+import { LangGraphLogoSVG } from "../icons/langgraph";
 import { TooltipIconButton } from "./tooltip-icon-button";
 import {
   ArrowDown,
@@ -330,7 +330,7 @@ export function Thread() {
                     damping: 30,
                   }}
                 >
-                  <FaviconIcon
+                  <LangGraphLogoSVG
                     width={32}
                     height={32}
                   />
@@ -406,7 +406,7 @@ export function Thread() {
                 <div className="sticky bottom-0 flex flex-col items-center gap-8 bg-white">
                   {!chatStarted && (
                     <div className="flex items-center gap-3">
-                      <FaviconIcon className="h-8 flex-shrink-0" />
+                      <LangGraphLogoSVG className="h-8 flex-shrink-0" />
                       <h1 className="text-2xl font-semibold tracking-tight">
                         MicroVec Chat
                       </h1>
